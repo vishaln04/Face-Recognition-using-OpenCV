@@ -47,6 +47,7 @@ for dir_name in dirs:
 			labels.append(label)
 
 face_recognizer.train(faces, np.array(labels))
+face_recognizer.save('/home/vishal/BTP_Final/training_data/trainingdata.yml')
 
 cv2.destroyAllWindows()
 cv2.waitKey(1)
