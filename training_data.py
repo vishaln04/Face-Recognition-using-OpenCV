@@ -34,6 +34,8 @@ for dir_name in dirs:
 		image = cv2.imread(image_path)
 		
 		image=image.convert('L')
+		
+		face = np.array(image, 'uint8')
 
 		cv2.imshow("Training on image...", image)
 		cv2.waitKey(100)
