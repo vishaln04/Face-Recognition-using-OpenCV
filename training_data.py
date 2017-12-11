@@ -8,7 +8,7 @@ import cv2
 faces = []
 labels = []
 
-data_folder_path = "/home/vishal/BTP_Final/training_data/"
+data_folder_path = "/home/vishal/Desktop/training_data/"
 face_recognizer = cv2.face.createLBPHFaceRecognizer()
 
 dirs = os.listdir(data_folder_path)
@@ -31,16 +31,17 @@ for dir_name in dirs:
 
 		image_path = subject_dir_path + "/" + image_name
 
-		image = cv2.imread(image_path)
+		image = Image.open(image_path)
+		#image = cv2.imread(image_path)
 		
-		image=Image.open(imge_path).convert('L')
+		image=image.convert('L')
 		
 		face = np.array(image, 'uint8')
 
 		cv2.imshow("Training on image...", face)
 		cv2.waitKey(100)
 
-		face = image
+		#face = image
 
 		if face is not None:
 			faces.append(face)
